@@ -1,8 +1,14 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-white">
+        <q-toolbar-title
+          class="text-dark"
+        >
+          Registro Spark Tech
+        </q-toolbar-title>
         <q-btn
+          color="black"
           flat
           dense
           round
@@ -10,8 +16,6 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
-        <q-toolbar-title>Teste Spark Tech</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -19,17 +23,19 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      class="bg-primary"
-    >
+      class="bg-dark"
+      >
       <q-list class="text-white">
         <div class="q-pa-md">
           <img alt="Spark Tech logo" src="~assets/spark-logo-menu-9.png" />
         </div>
 
         <q-expansion-item
-          label="Teste"
+          label="Usuários"
+          icon="group"
           expand-icon="none"
           :content-inset-level="1"
+          :to="{ name: 'home' }"
         >
         </q-expansion-item>
 
@@ -41,7 +47,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="bg-grey-3">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -53,7 +59,8 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Teste'
+    title: 'Sobre o Quasar',
+    icon: 'rocket_launch'
   }
 ]
 
